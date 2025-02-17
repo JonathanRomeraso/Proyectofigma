@@ -36,7 +36,7 @@ class PlaceCardWidget extends StatelessWidget {
                 padding: EdgeInsets.all(8),
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                color: Colors.white.withOpacity(0.8), // Fondo semitransparente
+                color: Colors.white.withOpacity(0.8), 
                 ),
                 child: Image.asset(
                   "/icons/navigation/icon_heart.png",
