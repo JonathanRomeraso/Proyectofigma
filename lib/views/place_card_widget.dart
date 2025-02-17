@@ -39,7 +39,7 @@ class PlaceCardWidget extends StatelessWidget {
                   color: Colors.white.withOpacity(0.8),
                 ),
                 child: Image.asset(
-                  "/icons/navigation/icon_heart.png",
+                  "assets/icons/navigation/icon_heart.png",
                   width: 22,
                   height: 22,
                 ),
@@ -48,8 +48,19 @@ class PlaceCardWidget extends StatelessWidget {
 
             GestureDetector(
               onTap: () {
-                Navigator.pushNamed(context, "/Place");
+                Navigator.pushNamed(
+                  context,
+                  "/Place",
+                  arguments: {
+                    'imageUrl': imageUrl,
+                    'placeName': placeName,
+                    'city': city,
+                    'country': country,
+                    'rating': rating,
+                  },
+                );
               },
+
               child: Container(
                 padding: EdgeInsets.all(10),
                 height: 75,
@@ -101,7 +112,7 @@ class PlaceCardWidget extends StatelessWidget {
                                 right: 16,
                               ),
                               child: Image(
-                                image: AssetImage("/icons/ubi_icon.png"),
+                                image: AssetImage("assets/icons/ubi_icon.png"),
                                 width: 16,
                                 height: 16,
                               ),
@@ -122,7 +133,7 @@ class PlaceCardWidget extends StatelessWidget {
                             Padding(
                               padding: const EdgeInsets.only(right: 6),
                               child: Image(
-                                image: AssetImage("/icons/start_icon.png"),
+                                image: AssetImage("assets/icons/start_icon.png"),
                                 width: 12,
                                 height: 12,
                               ),

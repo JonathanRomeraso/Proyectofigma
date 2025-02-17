@@ -6,6 +6,8 @@ class PlaceScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final args =
+        ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>;
     return Scaffold(
       body: Container(
         height: double.infinity,
@@ -27,7 +29,7 @@ class PlaceScreen extends StatelessWidget {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
                 image: DecorationImage(
-                  image: AssetImage("/images/places/Place1.png"),
+                  image: AssetImage(args['imageUrl']),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -48,7 +50,7 @@ class PlaceScreen extends StatelessWidget {
                           color: Color.fromRGBO(29, 29, 29, 0.4),
                         ),
                         child: Image.asset(
-                          "/icons/arrow_left_icon.png",
+                          "assets/icons/arrow_left_icon.png",
                           width: 22,
                           height: 22,
                         ),
@@ -65,7 +67,7 @@ class PlaceScreen extends StatelessWidget {
                         color: Color.fromRGBO(29, 29, 29, 0.4),
                       ),
                       child: Image.asset(
-                        "/icons/archive_icon.png",
+                        "assets/icons/archive_icon.png",
                         width: 22,
                         height: 22,
                       ),
@@ -90,9 +92,9 @@ class PlaceScreen extends StatelessWidget {
                         children: [
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: const [
+                            children: [
                               Text(
-                                "Andes Mountain",
+                                args['placeName'],
                                 style: TextStyle(
                                   fontSize: 24,
                                   fontFamily: "Inter",
@@ -117,13 +119,13 @@ class PlaceScreen extends StatelessWidget {
                               Row(
                                 children: [
                                   Image.asset(
-                                    "icons/ubi_icon.png",
+                                    "assets/icons/ubi_icon.png",
                                     width: 16,
                                     height: 16,
                                   ),
                                   const SizedBox(width: 6),
-                                  const Text(
-                                    "South, America",
+                                  Text(
+                                    "${args['city']}, ${args['country']}",
                                     style: TextStyle(
                                       color: Color(0xFFCAC8C8),
                                       fontSize: 18,
@@ -190,22 +192,22 @@ class PlaceScreen extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           InfoPlaceWidget(
-                            icon: "/icons/clock_icon.png",
+                            icon: "assets/icons/clock_icon.png",
                             label: "8 hours",
                           ),
                           InfoPlaceWidget(
-                            icon: "/icons/cloud_icon.png",
+                            icon: "assets/icons/cloud_icon.png",
                             label: "16°C",
                           ),
                           InfoPlaceWidget(
-                            icon: "/icons/start2_icon.png",
+                            icon: "assets/icons/start2_icon.png",
                             label: "4.5",
                           ),
                         ],
                       ),
                     ),
 
-                    SizedBox(height: 34),
+                    SizedBox(height: 14),
                     ShaderMask(
                       shaderCallback: (bounds) {
                         return LinearGradient(
@@ -219,7 +221,7 @@ class PlaceScreen extends StatelessWidget {
                       },
                       child: Text(
                         "This vast mountain range is renowned for its remarkable diversity in terms of topography and climate. "
-                        "It features towering peaks, active volcanoes, deep canyons, expansive plateaus, and lush valleys. The Andes are also home to ",
+                        "It features towering peaks, active volcanoes, deep canyons, expansive plateaus.",
                         style: TextStyle(
                           fontFamily: "Roboto",
                           fontSize: 18,
@@ -229,37 +231,40 @@ class PlaceScreen extends StatelessWidget {
                       ),
                     ),
 
-                    SizedBox(height: 50),
+                    SizedBox(height: 20),
 
                     ////////////////////////////////////////////////////////////////////////////////////
                     // Book Button
-                    Center(
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.black,
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 186.5,
-                            vertical: 33,
-                          ),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                        ),
-                        onPressed: () {},
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Text(
-                              "Book Now",
-                              style: TextStyle(
-                                fontSize: 20,
-                                fontFamily: "Roboto",
-                                color: Colors.white,
+                    Padding(
+                      padding: const EdgeInsets.only(left: 28, right: 29),
+                      child: Center(
+                        child: SizedBox(
+                          height: 66,
+                          width: 373,
+                          child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.black,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20),
                               ),
                             ),
-                            SizedBox(width: 10),
-                            Image.asset("/icons/send_icon.png", height: 23),
-                          ],
+                            onPressed: () {},
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Text(
+                                  "Book Now",
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                    fontFamily: "Roboto",
+                                    color: Colors.white,
+                                  ),
+                                ),
+                                SizedBox(width: 10),
+                                Image.asset("assets/icons/send_icon.png", height: 23),
+                              ],
+                            ),
+                          ),
                         ),
                       ),
                     ),

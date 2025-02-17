@@ -35,9 +35,7 @@ class HomeScreen extends StatelessWidget {
                     height: 75,
                     width: 75,
                     child: CircleAvatar(
-                      backgroundImage: NetworkImage(
-                        "https://via.placeholder.com/50",
-                      ),
+                      backgroundImage: AssetImage("assets/avatar/avatar1.png")
                     ),
                   ),
                 ],
@@ -78,12 +76,12 @@ class HomeScreen extends StatelessWidget {
                       children: [
                         Padding(
                           padding: const EdgeInsets.only(right: 26),
-                          child: Image.asset("/icons/line_icon.png", width: 32),
+                          child: Image.asset("assets/icons/line_icon.png", width: 32),
                         ),
                         Padding(
                           padding: const EdgeInsets.only(right: 18.23),
                           child: Image.asset(
-                            "/icons/filter_icon.png",
+                            "assets/icons/filter_icon.png",
                             width: 24,
                             height: 21.77,
                           ),
@@ -150,21 +148,21 @@ class HomeScreen extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 children: [
                   PlaceCardWidget(
-                    imageUrl: "/images/places/Place2.png",
+                    imageUrl: "assets/images/places/Place2.png",
                     placeName: "Mount Fuji",
                     city: "Tokyo",
                     rating: 4.8,
                     country: "Japan",
                   ),
                   PlaceCardWidget(
-                    imageUrl: "/images/places/Place1.png",
+                    imageUrl: "assets/images/places/Place1.png",
                     placeName: "Andes Mountain",
-                    city: "South, ",
+                    city: "South",
                     rating: 4.7,
-                    country: "Japan",
+                    country: "America",
                   ),
                   PlaceCardWidget(
-                    imageUrl: "/images/places/Place2.png",
+                    imageUrl: "assets/images/places/Place2.png",
                     placeName: "Andes Mountain",
                     city: "South",
                     rating: 4.7,
@@ -189,7 +187,7 @@ class HomeScreen extends StatelessWidget {
               alignment: Alignment.center,
               clipBehavior: Clip.none,
               children: [
-                Image.asset("/icons/navigation/icon_home.png", height: 22.97),
+                Image.asset("assets/icons/navigation/icon_home.png", height: 22.97),
                 Positioned(
                   bottom: -15,
                   child: Container(
@@ -207,7 +205,7 @@ class HomeScreen extends StatelessWidget {
           ),
           BottomNavigationBarItem(
             icon: Image.asset(
-              "/icons/navigation/icon_clock.png",
+              "assets/icons/navigation/icon_clock.png",
               height: 22.97,
             ),
 
@@ -215,13 +213,13 @@ class HomeScreen extends StatelessWidget {
           ),
           BottomNavigationBarItem(
             icon: Image.asset(
-              "/icons/navigation/icon_heart.png",
+              "assets/icons/navigation/icon_heart.png",
               height: 22.97,
             ),
             label: "",
           ),
           BottomNavigationBarItem(
-            icon: Image.asset("/icons/navigation/icon_user.png", height: 22.97),
+            icon: Image.asset("assets/icons/navigation/icon_user.png", height: 22.97),
             label: "",
           ),
         ],

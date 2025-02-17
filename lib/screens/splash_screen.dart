@@ -5,7 +5,7 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     
-    Future.delayed(Duration(milliseconds: 5000), () {
+    Future.delayed(Duration(milliseconds: 4000), () {
       Navigator.pushNamed(context, "/home");
     });
     return Scaffold(
@@ -41,7 +41,7 @@ class SplashScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Image.asset("/icons/globe_icon.png", height: 36, width: 36),
+                  Image.asset("assets/icons/globe_icon.png", height: 36, width: 36),
                 ],
               ),
               SizedBox(height: 40),
