@@ -37,16 +37,21 @@ class PlaceScreen extends StatelessWidget {
                   Positioned(
                     top: 0,
                     left: 10,
-                    child: Container(
-                      padding: EdgeInsets.all(8),
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Color.fromRGBO(29, 29, 29, 0.4),
-                      ),
-                      child: Image.asset(
-                        "/icons/arrow_left_icon.png",
-                        width: 22,
-                        height: 22,
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.pushNamed(context, "/home");
+                      },
+                      child: Container(
+                        padding: EdgeInsets.all(8),
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: Color.fromRGBO(29, 29, 29, 0.4),
+                        ),
+                        child: Image.asset(
+                          "/icons/arrow_left_icon.png",
+                          width: 22,
+                          height: 22,
+                        ),
                       ),
                     ),
                   ),
@@ -66,7 +71,7 @@ class PlaceScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-  
+
                   Padding(
                     padding: const EdgeInsets.symmetric(
                       horizontal: 21,

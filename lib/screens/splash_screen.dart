@@ -4,6 +4,10 @@ class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
   @override
   Widget build(BuildContext context) {
+    
+    Future.delayed(Duration(milliseconds: 5000), () {
+      Navigator.pushNamed(context, "/home");
+    });
     return Scaffold(
       body: Container(
         //height: double.infinity,

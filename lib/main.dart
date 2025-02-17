@@ -12,8 +12,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData.dark(),
+      routes: {
+        "/home" : (context) => HomeScreen(),
+        "/Place" : (context) => PlaceScreen(),
+      },
       title: 'Material App',
-      home: PlaceScreen(),
+      home: SplashScreen(),
+
     );
   }
 }
