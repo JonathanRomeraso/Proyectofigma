@@ -9,28 +9,29 @@ class FilterButtonGroup extends StatefulWidget {
 }
 
 class _FilterButtonGroupState extends State<FilterButtonGroup> {
-  int _selectedIndex = 0; 
+  int _selectedIndex = 0;
   final List<String> filters = ["Most Viewed", "Nearby", "Latest"];
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(top: 40, left: 28),
-      child: Wrap(
-        spacing: 10,
-        children: List.generate(filters.length, (index) {
-          return FilterButtonWidget(
-            label: filters[index],
-            isSelected: _selectedIndex == index,
-            onTap: () {
-              setState(() {
-                _selectedIndex = index; 
-              });
-            },
-          );
-        }),
+      child: Center(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: List.generate(filters.length, (index) {
+            return FilterButtonWidget(
+              label: filters[index],
+              isSelected: _selectedIndex == index,
+              onTap: () {
+                setState(() {
+                  _selectedIndex = index;
+                });
+              },
+            );
+          }),
+        ),
       ),
     );
   }
 }
-

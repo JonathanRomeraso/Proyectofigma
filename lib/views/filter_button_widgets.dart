@@ -15,15 +15,27 @@ class FilterButtonWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 54,
+      //height: 120,
       child: ChoiceChip(
-        label: Text(label),
+        label: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+          child: Text(
+            label,
+            style: TextStyle(
+              fontFamily: "Roboto",
+              fontSize: 16,
+              color:
+                  isSelected ? Colors.white : Color.fromRGBO(197, 197, 197, 1),
+            ),
+          ),
+        ),
         selected: isSelected,
-        backgroundColor: Colors.grey[200],
-        selectedColor: Colors.black,
+        backgroundColor: const Color.fromRGBO(251, 251, 251, 1),
+        selectedColor: const Color.fromRGBO(47, 47, 47, 1),
         showCheckmark: false,
-        labelStyle: TextStyle(
-          color: isSelected ? Colors.white : Colors.black,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20),
+          side: BorderSide(color: isSelected ? Colors.black : Colors.white),
         ),
         onSelected: (_) => onTap(),
       ),

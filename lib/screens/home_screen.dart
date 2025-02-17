@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:practica_figma/views/filter_button_group.dart';
+import 'package:practica_figma/views/place_card_widget.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -14,6 +15,8 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            ////////////////////////////////////////////////////////////////////////////////////
+            // Data
             Padding(
               padding: const EdgeInsets.only(left: 26, top: 34, right: 16),
               child: Row(
@@ -25,6 +28,7 @@ class HomeScreen extends StatelessWidget {
                       fontSize: 30,
                       fontFamily: "Montserrat",
                       color: const Color.fromRGBO(47, 47, 47, 1),
+                      fontWeight: FontWeight.w700,
                     ),
                   ),
                   SizedBox(
@@ -106,13 +110,68 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
             ),
-
-            const SizedBox(height: 42),
             ////////////////////////////////////////////////////////////////////////////////////
             // Filter Buttons
-            Padding(
-              padding: const EdgeInsets.only(top: 40, left: 28),
-              child: FilterButtonGroup(),
+            const SizedBox(height: 42),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 26),
+                  child: Text(
+                    "Popular Places ",
+                    style: TextStyle(
+                      fontFamily: "Poopins",
+                      fontSize: 20,
+                      color: Color.fromRGBO(47, 47, 47, 1),
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(right: 27),
+                  child: Text(
+                    "View All",
+                    style: TextStyle(
+                      fontFamily: "Roboto",
+                      fontSize: 16,
+                      color: Color.fromRGBO(136, 136, 136, 1),
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            FilterButtonGroup(),
+            ////////////////////////////////////////////////////////////////////////////////////
+            // Places List
+            Expanded(
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: [
+                  PlaceCardWidget(
+                    imageUrl: "/images/places/Place2.png",
+                    placeName: "Mount Fuji",
+                    city: "Tokyo",
+                    rating: 4.8,
+                    country: "Japan",
+                  ),
+                  PlaceCardWidget(
+                    imageUrl: "/images/places/Place1.png",
+                    placeName: "Andes Mountain",
+                    city: "South, ",
+                    rating: 4.7,
+                    country: "Japan",
+                  ),
+                  PlaceCardWidget(
+                    imageUrl: "/images/places/Place2.png",
+                    placeName: "Andes Mountain",
+                    city: "South",
+                    rating: 4.7,
+                    country: "America",
+                  ),
+                ],
+              ),
             ),
           ],
         ),
