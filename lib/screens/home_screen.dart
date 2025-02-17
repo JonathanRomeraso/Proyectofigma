@@ -180,11 +180,50 @@ class HomeScreen extends StatelessWidget {
       ////////////////////////////////////////////////////////////////////////////////////
       // Bottom Navigation Bar
       bottomNavigationBar: BottomNavigationBar(
+        elevation: 0,
         backgroundColor: Colors.white,
+        type: BottomNavigationBarType.fixed,
         items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: ""),
-          BottomNavigationBarItem(icon: Icon(Icons.watch_later), label: ""),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: ""),
+          BottomNavigationBarItem(
+            icon: Stack(
+              alignment: Alignment.center,
+              clipBehavior: Clip.none,
+              children: [
+                Image.asset("/icons/navigation/icon_home.png", height: 22.97),
+                Positioned(
+                  bottom: -15,
+                  child: Container(
+                    width: 12,
+                    height: 12,
+                    decoration: BoxDecoration(
+                      color: Colors.red,
+                      shape: BoxShape.circle,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            label: "",
+          ),
+          BottomNavigationBarItem(
+            icon: Image.asset(
+              "/icons/navigation/icon_clock.png",
+              height: 22.97,
+            ),
+
+            label: "",
+          ),
+          BottomNavigationBarItem(
+            icon: Image.asset(
+              "/icons/navigation/icon_heart.png",
+              height: 22.97,
+            ),
+            label: "",
+          ),
+          BottomNavigationBarItem(
+            icon: Image.asset("/icons/navigation/icon_user.png", height: 22.97),
+            label: "",
+          ),
         ],
         currentIndex: 0,
       ),

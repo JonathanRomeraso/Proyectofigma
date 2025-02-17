@@ -29,6 +29,23 @@ class PlaceCardWidget extends StatelessWidget {
         child: Stack(
           alignment: Alignment.bottomCenter,
           children: [
+            Positioned(
+              top: 12,
+              right: 0,
+              child: Container(
+                padding: EdgeInsets.all(8),
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                color: Colors.white.withOpacity(0.8), // Fondo semitransparente
+                ),
+                child: Image.asset(
+                  "/icons/navigation/icon_heart.png",
+                  width: 22,
+                  height: 22,
+                ),
+              ),
+            ),
+
             Container(
               padding: EdgeInsets.all(10),
               height: 75,
